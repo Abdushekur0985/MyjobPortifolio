@@ -1,0 +1,67 @@
+:root { --bg1: #0f172a; --bg2: #0f3b8b; }
+html, body, #root { height: 100%; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: linear-gradient(135deg, var(--bg1), var(--bg2)); color: #fff; }
+.hero { padding: 6rem 0; }
+.hero { position: relative; }
+.display-4 { color: #fff; text-shadow: 0 6px 18px rgba(2,6,23,0.6); }
+.lead { opacity: 0.95; }
+.btn-primary { background-image: linear-gradient(90deg, #6c5ce7, #00b4d8); border: none; }
+@media (max-width: 767px) { .display-4 { font-size: 2rem; } }
+
+/* Hero image hover interaction and rounded/circular look */
+.hero-image {
+	width: 85%;
+	max-width: 360px;
+	height: auto;
+	border-radius: 18%;
+	transition: transform 0.45s cubic-bezier(.2,.9,.2,1), box-shadow 0.35s ease;
+	will-change: transform;
+}
+.hero-image:hover {
+	transform: translateY(-8px) scale(1.03) rotate(6deg);
+	box-shadow: 0 28px 60px rgba(2,6,23,0.55);
+}
+
+/* CTA overlay that stays centered */
+.hero-ctas-overlay {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 6%;
+	z-index: 60;
+	display: flex;
+	gap: 0.75rem;
+	align-items: center;
+}
+.hero-ctas-overlay .btn { box-shadow: 0 10px 30px rgba(2,6,23,0.35); }
+
+@media (max-width: 767px) {
+	.hero-ctas-overlay { position: static; transform: none; margin-top: 1.5rem; justify-content: center; }
+}
+
+/* Skills badges */
+.skills-row { margin-top: 1rem; }
+.skill-badge {
+	transition: transform 180ms ease, box-shadow 180ms ease, background-color 200ms ease;
+	border-radius: 999px;
+}
+.skill-badge:hover,
+.skill-badge:focus {
+	transform: translateY(-6px) scale(1.05);
+	box-shadow: 0 10px 30px rgba(2,6,23,0.18);
+	outline: none;
+}
+.skill-badge:focus { box-shadow: 0 10px 30px rgba(2,6,23,0.28); }
+
+/* Tech badges subtle lift */
+.tech-badges .badge {
+	cursor: default;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.tech-badges .badge:hover {
+	transform: translateY(-6px) scale(1.06);
+	box-shadow: 0 8px 20px rgba(2,6,23,0.2);
+}
+
+
