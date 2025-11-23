@@ -1,30 +1,96 @@
-import React from 'react';
+import React from "react";
 
 const services = [
-    { title: 'Web Applications', desc: 'Modern, responsive web apps with React and Node.js', icon: '🌐' },
-    { title: 'AI Integration', desc: 'Agentic AI generators and automation solutions', icon: '🤖' },
-    { title: 'DevOps & Deploy', desc: 'Docker, CI/CD and cloud deployment', icon: '⚙️' }
+  {
+    key: "frontend",
+    title: "Frontend",
+    subtitle: "Frontend Static Website for Promotion:",
+    desc: "Build fast, SEO-friendly promotional static sites and landing pages optimized for conversion and performance.",
+    icon: "🖥️",
+    accent: "frontend",
+  },
+  {
+    key: "backend",
+    title: "Backend Development",
+    desc: "Design and implement robust backend services (Node.js, Express, databases, authentication, APIs) that scale reliably.",
+    icon: "🗄️",
+    accent: "backend",
+  },
+  {
+    key: "consult",
+    title: "Consulting & Training",
+    desc: "Hands-on mentorship, code reviews, and training programs to coach and advise junior developers and teams.",
+    icon: "🎓",
+    accent: "consult",
+  },
+  {
+    key: "system",
+    title: "System Development",
+    desc: "End-to-end system design and implementation: architecture, integrations and deployment.",
+    img: "/src/assets/system.png",
+    icon: "🔧",
+    accent: "system",
+  },
+  {
+    key: "webapps",
+    title: "Web Applications",
+    desc: "Modern, responsive web apps with React and Node.js",
+    icon: "🌐",
+    accent: "webapps",
+  },
+  {
+    key: "ai",
+    title: "AI Integration",
+    desc: "Agentic AI generators and automation solutions",
+    icon: "🤖",
+    accent: "ai",
+  },
+  {
+    key: "devops",
+    title: "DevOps & Deploy",
+    desc: "Docker, CI/CD and cloud deployment",
+    icon: "⚙️",
+    accent: "devops",
+  },
 ];
 
 export default function Services() {
-    return (
-        <section id="services" className="py-5" style={{ minHeight: '60vh' }}>
-            <div className="container">
-                <h2 className="mb-4">Services</h2>
-                <div className="row g-3">
-                    {services.map(s => (
-                        <div key={s.title} className="col-md-4">
-                            <div className="card h-100 shadow-sm hover-lift">
-                                <div className="card-body text-center">
-                                    <div style={{ fontSize: 40 }}>{s.icon}</div>
-                                    <h5 className="card-title mt-2">{s.title}</h5>
-                                    <p className="card-text text-muted">{s.desc}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+  return (
+    <section id="services" className="py-5" style={{ minHeight: "60vh" }}>
+      <div className="container">
+        <h2 className="mb-4">Services</h2>
+        <div className="row g-4">
+          {services.map((s) => (
+            <div key={s.key} className="col-md-6 col-lg-3">
+              <div
+                className={`card service-card accent-${s.accent}`}
+                data-aos="fade-up"
+              >
+                {s.img ? (
+                  <div className="service-media overflow-hidden">
+                    <img
+                      src={s.img}
+                      alt={s.title}
+                      className="img-fluid service-img"
+                    />
+                  </div>
+                ) : (
+                  <div className="p-4 text-center" style={{ fontSize: 36 }}>
+                    {s.icon}
+                  </div>
+                )}
+                <div className="card-body text-center">
+                  <h5 className="card-title">{s.title}</h5>
+                  {s.subtitle ? (
+                    <h6 className="small text-light">{s.subtitle}</h6>
+                  ) : null}
+                  <p className="card-text text-light">{s.desc}</p>
                 </div>
+              </div>
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
