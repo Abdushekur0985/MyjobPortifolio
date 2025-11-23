@@ -12,8 +12,11 @@
   color: white;
   overflow: hidden;
   white-space: nowrap;
-  display: inline-block;
-  /* kept for fallback: text will be clipped if too long */
+  display: block;
+  position: relative;
+  height: 1.4rem;
+  /* CSS variable to control ticker speed (seconds) */
+  --ticker-duration: 12s;
 }
 
 /* Stop animation on hover */
@@ -29,6 +32,71 @@
   100% {
     transform: translateX(-100%);
   }
+}
+
+/* Inner moving element for the ticker */
+.subtitle-scroll .ticker {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  will-change: transform;
+  padding-left: 100%; /* give space before repeating if you repeat */
+  animation: scrollText var(--ticker-duration) linear infinite;
+}
+
+/* Pause on hover/focus for accessibility */
+.subtitle-scroll:hover .ticker,
+.subtitle-scroll:focus-within .ticker {
+  animation-play-state: paused;
+}
+
+/* ===== Continuous services ticker (single row, RTL, repeating) ===== */
+.services-ticker {
+  overflow: hidden;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0.15));
+  border-radius: 6px;
+  padding: 6px 0;
+  margin-bottom: 18px;
+}
+.services-ticker .ticker-track {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  white-space: nowrap;
+  /* Place two identical tracks side-by-side and translate left */
+  transform: translateX(0);
+  animation: ticker-move var(--ticker-speed, 18s) linear infinite;
+}
+.services-ticker .ticker-item {
+  color: #fff;
+  font-weight: 600;
+  padding: 4px 8px;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+
+/* duplicate container (wrap both tracks in .ticker-inner) */
+.services-ticker .ticker-inner {
+  display: inline-flex;
+  min-width: 200%;
+}
+
+@keyframes ticker-move {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+
+/* pause when hovering the ticker */
+.services-ticker:hover .ticker-track,
+.services-ticker:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+
+/* small screen: reduce gap and font-size */
+@media (max-width: 576px) {
+  .services-ticker .ticker-track { gap: 24px; }
+  .services-ticker .ticker-item { font-size: 0.85rem; }
 }
 
 /* Gentle horizontal slide for whole card when desired */

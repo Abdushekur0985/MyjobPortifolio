@@ -35,10 +35,10 @@ const sampleProjects = [
 
 export default function PortfolioClean() {
   return (
-    <section id="portfolio" className="py-5" style={{ minHeight: '60vh' }}>
+    <section id="portfolio" className="py-1" style={{ minHeight: '60vh' }}>
       <div className="container">
         {/*  Centered and bold header */}
-        <h2 className="mb-4 text-center fw-bold">Portfolio</h2>
+        <h2 className="mb-4 text-center portfolio-header-gradient">Portfolio</h2>
 
         <div className="row g-4">
           {sampleProjects.map((p) => (
@@ -58,7 +58,7 @@ export default function PortfolioClean() {
                 <div className="card-body">
                   {/* , visible text */}
                   <h5 className="card-title text-light fw-semibold">{p.title}</h5>
-                  <p className="card-text text-secondary">{p.desc}</p>
+                  <p className="card-text text-danger">{p.desc}</p>
 
                   <div className="d-flex gap-2 align-items-center">
                     <small className="text-success me-auto">

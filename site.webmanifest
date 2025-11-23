@@ -1,0 +1,20 @@
+{
+  "name": "Abdu's Portfolio",
+  "short_name": "Abdu",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f2436",
+  "theme_color": "#0f2436",
+  "icons": [
+    {
+      "src": "/src/assets/myimage.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/assets/myimage.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

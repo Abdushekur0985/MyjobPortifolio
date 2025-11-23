@@ -29,7 +29,7 @@ const services = [
     key: "system",
     title: "System Development",
     desc: "End-to-end system design and implementation: architecture, integrations and deployment.",
-    
+
     icon: "🔧",
     accent: "system",
   },
@@ -63,6 +63,23 @@ export default function Services() {
         {/* ✅ Mixed gradient header */}
         <h2 className="mb-4 text-center services-header">Services</h2>
 
+        {/* Continuous RTL ticker row (all services on one row, loops forever) */}
+        <div className="services-ticker" aria-hidden="false" aria-label="Services ticker">
+          <div className="ticker-inner" style={{ "--ticker-speed": '18s' }}>
+            <div className="ticker-track">
+              {services.map((s) => (
+                <span key={s.key} className="ticker-item">{s.subtitle || s.title}</span>
+              ))}
+            </div>
+            {/* duplicate for seamless loop */}
+            <div className="ticker-track" aria-hidden="true">
+              {services.map((s) => (
+                <span key={s.key + '-dup'} className="ticker-item">{s.subtitle || s.title}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="row g-4">
           {services.map((s) => (
             <div key={s.key} className="col-md-6 col-lg-3">
@@ -86,7 +103,9 @@ export default function Services() {
                 <div className="card-body text-center">
                   <h5 className="card-title text-white">{s.title}</h5>
                   {s.subtitle ? (
-                    <h6 className="small subtitle-scroll">{s.subtitle}</h6>
+                    <h6 className="small subtitle-scroll" style={{ "--ticker-duration": `${Math.max(8, s.subtitle.length / 8 * 2)}s` }} tabIndex={0} aria-live="polite">
+                      <span className="ticker">{s.subtitle}</span>
+                    </h6>
                   ) : null}
                   <p className="card-text text-white">{s.desc}</p>
                 </div>
