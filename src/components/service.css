@@ -1,0 +1,49 @@
+/* Gradient header */
+.services-header {
+  font-weight: bold;
+  font-size: 2rem;
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle scrolling like TV captions */
+.subtitle-scroll {
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  /* kept for fallback: text will be clipped if too long */
+}
+
+/* Stop animation on hover */
+.subtitle-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Keyframes for scrolling effect */
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Gentle horizontal slide for whole card when desired */
+@keyframes slideX {
+  0% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  100% { transform: translateX(-6px); }
+}
+
+.service-card.has-scroll {
+  animation: slideX 6s ease-in-out infinite;
+}
+
+/* Ensure all text is white */
+.card-title,
+.card-text {
+  color: white !important;
+}

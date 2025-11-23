@@ -1,0 +1,30 @@
+/* Gradient button styling */
+.hire-btn {
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff, #0072ff);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect */
+.hire-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  background-position: right center;
+}
+
+/* Optional animated gradient movement */
+.hire-btn {
+  background-size: 300% 300%;
+  animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: left center; }
+  50% { background-position: right center; }
+  100% { background-position: left center; }
+}

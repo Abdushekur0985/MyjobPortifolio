@@ -1,4 +1,6 @@
 import React from "react";
+import "../components/service.css"; // page-specific service styles
+
 
 const services = [
   {
@@ -27,7 +29,7 @@ const services = [
     key: "system",
     title: "System Development",
     desc: "End-to-end system design and implementation: architecture, integrations and deployment.",
-    img: "/src/assets/system.png",
+    
     icon: "🔧",
     accent: "system",
   },
@@ -58,12 +60,14 @@ export default function Services() {
   return (
     <section id="services" className="py-5" style={{ minHeight: "60vh" }}>
       <div className="container">
-        <h2 className="mb-4">Services</h2>
+        {/* ✅ Mixed gradient header */}
+        <h2 className="mb-4 text-center services-header">Services</h2>
+
         <div className="row g-4">
           {services.map((s) => (
             <div key={s.key} className="col-md-6 col-lg-3">
               <div
-                className={`card service-card accent-${s.accent}`}
+                className={`card service-card accent-${s.accent} ${s.subtitle ? 'has-scroll' : ''}`}
                 data-aos="fade-up"
               >
                 {s.img ? (
@@ -80,11 +84,11 @@ export default function Services() {
                   </div>
                 )}
                 <div className="card-body text-center">
-                  <h5 className="card-title">{s.title}</h5>
+                  <h5 className="card-title text-white">{s.title}</h5>
                   {s.subtitle ? (
-                    <h6 className="small text-light">{s.subtitle}</h6>
+                    <h6 className="small subtitle-scroll">{s.subtitle}</h6>
                   ) : null}
-                  <p className="card-text text-light">{s.desc}</p>
+                  <p className="card-text text-white">{s.desc}</p>
                 </div>
               </div>
             </div>

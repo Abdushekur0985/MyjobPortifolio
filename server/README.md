@@ -20,10 +20,10 @@ CREATE DATABASE portfolio_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 ```powershell
 npm install
-# then
-npm run server
-# or for dev (auto-restart)
-npm run dev:server
-```
+This folder previously contained an Express + MySQL backend.
 
-The server will create the `contacts` table automatically on first run.
+The backend has been disabled/removed per project request. The `server/index.js` file
+is intentionally replaced by a small placeholder so running `npm install` and
+`npm run dev` for the frontend works without starting a server.
+
+If you want to restore a backend later, add your server files back into this folder.

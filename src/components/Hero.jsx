@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Typed from 'typed.js';
+import '../components/hero.css';
 import heroImg from '../assets/myimage.png';
 
 export default function Hero() {
@@ -98,9 +99,16 @@ export default function Hero() {
                                 <p className="lead text-light mb-4">I design and build modern, full‑stack web experiences — React frontends, robust Node/Express backends, databases, production deployments, and AI-powered features for smarter UX.</p>
                                 <h3 className="mb-4"><span ref={el} className="text-primary"></span></h3>
                                 <div className="d-flex gap-3 justify-content-center mb-3">
-                                    <a href="#contact" className="btn btn-primary btn-lg" data-aos="zoom-in">Contact Me</a>
-                                    <a href="#projects" className="btn btn-outline-primary btn-lg" data-aos="zoom-in" data-aos-delay="150">See Projects</a>
-                                </div>
+  <button
+    className="btn btn-lg hire-btn"
+    data-aos="zoom-in"
+    data-aos-delay="150"
+    onClick={() => window.location.href = "#projects"} // ✅ still navigates
+  >
+    Hire Abdushekur
+  </button>
+</div>
+
 
                                 {/* removed why-hire per user request */}
                             </div>
