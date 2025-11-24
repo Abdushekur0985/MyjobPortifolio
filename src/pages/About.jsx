@@ -1,5 +1,5 @@
 import React from 'react';
-import '../components/About.css'; 
+import '../components/About.css';
 
 export default function About() {
   return (
@@ -7,12 +7,13 @@ export default function About() {
       <div className="container">
         <div className="row align-items-center">
           {/* Profile Image */}
-          <div className="col-md-4 text-center mb-4 mb-md-0">
+          <div className="col-md-4 text-center mb-2 mb-md-0">
             <img
               src="/src/assets/image.png"
               alt="profile"
-              className="img-fluid rounded-circle shadow-lg"
+              className="img-fluid rounded-circle shadow-lg profile-pic"
               style={{ maxWidth: 200 }}
+              tabIndex={0}
             />
           </div>
 
@@ -56,7 +57,7 @@ export default function About() {
             </p>
 
             {/* ✅ Gradient button */}
-            <a  href=''  className="btn hire-btn ">
+            <a href='' className="btn hire-btn ">
               System Developer Abdushekur
             </a>
           </div>

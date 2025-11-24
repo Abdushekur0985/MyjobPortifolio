@@ -8,7 +8,7 @@ const sampleProjects = [
     img: '/src/assets/payment.png',
     tech: ['React', 'Node'],
     github: 'https://github.com/Abdushekur0985',
-    demo: 'https://nilepixel-tech.vercel.app/',
+    demo: 'https://nilepixeltech.vercel.app/',
     accent: 'payment'
   },
   {
@@ -18,7 +18,7 @@ const sampleProjects = [
     img: '/src/assets/saas.png',
     tech: ['React', 'Postgres'],
     github: 'https://github.com/Abdushekur0985',
-    demo: 'https://nilepixel-tech.vercel.app/',
+    demo: 'https://nilepixeltech.vercel.app/',
     accent: 'saas'
   },
   {
@@ -28,7 +28,7 @@ const sampleProjects = [
     img: '/src/assets/delivery.png',
     tech: ['React Native', 'Node'],
     github: 'https://github.com/Abdushekur0985',
-    demo: 'https://nilepixel-tech.vercel.app/',
+    demo: 'https://nilepixeltech.vercel.app/',
     accent: 'delivery'
   }
 ];

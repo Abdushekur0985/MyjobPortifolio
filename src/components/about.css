@@ -42,3 +42,34 @@
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
+
+/* Profile picture hover/interaction */
+.profile-pic {
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 320ms ease;
+  will-change: transform;
+  cursor: pointer;
+  display: inline-block;
+}
+.profile-pic:hover,
+.profile-pic:focus-visible {
+  /* spin full circle while lifting slightly and scaling */
+  animation: spin-360 0.9s cubic-bezier(.2,.9,.2,1) both;
+  box-shadow: 0 26px 60px rgba(2,6,23,0.45);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-pic,
+  .profile-pic:hover,
+  .profile-pic:focus-visible {
+    transition: none;
+    animation: none;
+    box-shadow: none;
+  }
+}
+
+@keyframes spin-360 {
+  0% { transform: translateY(0) scale(1); }
+  60% { transform: translateY(-8px) scale(1.05) rotate(270deg); }
+  100% { transform: translateY(-8px) scale(1.05) rotate(360deg); }
+}
