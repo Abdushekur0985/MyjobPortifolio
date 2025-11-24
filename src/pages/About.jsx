@@ -9,7 +9,7 @@ export default function About() {
           {/* Profile Image */}
           <div className="col-md-4 text-center mb-2 mb-md-0">
             <img
-              src="/src/assets/image.png"
+              src="/src/assets/profile.png"
               alt="profile"
               className="img-fluid rounded-circle shadow-lg profile-pic"
               style={{ maxWidth: 200 }}
